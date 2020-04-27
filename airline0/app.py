@@ -32,3 +32,5 @@ def book():
 	db.commit()
 
 	return render_template("success.html")
+	
+app.run(debug=True)
