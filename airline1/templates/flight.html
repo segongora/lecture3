@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Flight {{ flight.id }} - {{ flight.origin }} to {{ flight.destination }}
+{% endblock %}
+
+{% block body %}
+<h3>Specific detials</h3>
+<ul>
+	<li><b>Origin:</b> {{ flight.origin }}</li>
+	<li><b>Destination:</b> {{ flight.destination }}</li>
+	<li><b>Duration:</b> {{ flight.duration }} minutes</li>
+</ul>
+
+<h3>Passengers info</h3>
+<ol>
+	{% for passenger in passengers %}
+	<li>{{ passenger.name }}</li>
+	{% else %}
+	<li>No passengers for this flight.</li>
+	{% endfor %}
+</ol>
+{% endblock %}
